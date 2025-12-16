@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Time and Click Counter</title>
+    <script>
+        async function fetchTime() {
+            const response = await fetch('/api/time');
+            const data = await response.json();
+            document.getElementById('time').innerText = data.time;
+        }
+
+        async function incrementClick() {
+            const response = await fetch('/api/click', { method: 'POST' });
+            const data = await response.json();
+            document.getElementById('clickCount').innerText = data.clicks;
+        }
+
+        setInterval(fetchTime, 1000);
+    </script>
+</head>
+<body>
+    <h1>Current Time and Click Counter</h1>
+    <p>Current Time: <span id="time">Loading...</span></p>
+    <button onclick="incrementClick()">Click Me!</button>
+    <p>Number of Clicks: <span id="clickCount">0</span></p>
+</body>
+</html>
