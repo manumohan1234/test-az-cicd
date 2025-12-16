@@ -1,0 +1,12 @@
+{
+  "name": "time-click-counter",
+  "version": "1.0.0",
+  "description": "A Node.js app that displays the current time and tracks the number of button clicks.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
